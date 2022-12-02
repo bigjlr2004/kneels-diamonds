@@ -1,7 +1,14 @@
 /* You need to create the rest of styles for the layout shown */
 
+.choices{
+    display: flex;
+    
+}
+
+
 .options {
-    flex-basis: 24%;
+   
+    flex-basis: 22%;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: 1rem;
