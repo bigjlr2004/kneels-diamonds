@@ -37,6 +37,26 @@ const database = {
         }
     ]
 }
+export const addCustomOrder = () => {
+    //Copy the current state of user choices
+    const newOrder = {...database.orderBuilder}
+
+    //add a new primary key to the object
+    const lastIndex = database.customOrders.length - 1
+    newOrder.id = database.customOrders[lastIndex].id + 1
+
+    //add a timestamp to the order
+    newOrder.timestamp = Date.now()
+
+    //add the new order object to custom orders state
+    database.customOrders.push(newOrder)
+
+    //reset the temporary state for user choices
+    database.orderBuilder = {}
+
+    //Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 export const getMetals = () => {
     return database.metals.map(metal => ({...metal}))
