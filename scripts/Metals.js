@@ -1,10 +1,12 @@
-import { getMetals } from "./database.js"
+import { getMetals, setMetal } from "./database.js"
 
 const metals = getMetals()
 
 document.addEventListener(
-    "change",
-    (event) => {
+    "change", (event) => {
+        if (event.target.name === "metal") {
+            setMetal(parseInt(event.target.value)) // this sets the state with the value of the target that was selected
+        }
     }
 )
 
