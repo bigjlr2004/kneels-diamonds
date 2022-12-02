@@ -6,6 +6,8 @@
 
 */
 const database = {
+    orderBuilder: {}, // this database is used to store the state
+
     styles: [
         { id: 1, style: "Classic", price: 500 },
         { id: 2, style: "Modern", price: 710 },
@@ -48,4 +50,14 @@ export const getStyles = () => {
 }
 export const getCustomOrders = () => {
     return database.customOrders.map(customOrder => ({...customOrder}))
+}
+export const setMetal  = (id) => {
+    database.orderBuilder.metalId = id
+}
+export const setStyle = (id) => {
+    database.orderBuilder.styleId = id
+}
+
+export const setSize = (id) => {
+    database.orderBuilder.sizeId = id
 }
