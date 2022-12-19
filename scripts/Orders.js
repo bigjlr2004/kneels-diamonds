@@ -1,10 +1,10 @@
-import { getCustomOrders, getMetals, getStyles, getSizes, getOptions } from "./database.js"
 
+import { getData } from "./dataAccess.js"
 //calls the database to get the metals 
-const metals = getMetals()
-const styles = getStyles()
-const sizes = getSizes()
-const options = getOptions()
+const metals = getData("metals")
+const styles = getData("styles")
+const sizes = getData("sizes")
+const options = getData("options")
 
 
 const buildOrderListItem = (order) => {
@@ -50,7 +50,7 @@ export const Orders = () => {
         Can you explain why the state variable has to be inside
         the component function for Orders, but not the others?
     */
-    const orders = getCustomOrders()
+    const orders = getData("customOrders")
 
     let html = "<ul>"
 

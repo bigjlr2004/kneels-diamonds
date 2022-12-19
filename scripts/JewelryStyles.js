@@ -1,12 +1,12 @@
-import { getStyles, setStyle } from "./database.js"
 
-const styles = getStyles()
+import { getData, setData } from "./dataAccess.js"
+const styles = getData("styles")
 
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "style") {
-            setStyle(parseInt(event.target.value)) //this sets the state with the target value of what was selected
+            setData(parseInt(event.target.value),"style") //this sets the state with the target value of what was selected
         }
     }
 )
