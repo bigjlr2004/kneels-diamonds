@@ -16,3 +16,9 @@
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
 }
 
+.multiplier {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin-left: 1.5em;
+}
