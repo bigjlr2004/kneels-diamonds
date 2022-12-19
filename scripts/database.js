@@ -5,7 +5,7 @@
     modules to get copies of the state.
 
 */
-const database = {
+export const database = {
     orderBuilder: {}, // this database is used to store the state
 
     styles: [
@@ -64,28 +64,14 @@ export const addCustomOrder = () => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-export const getMetals = () => {
-    return database.metals.map(metal => ({...metal}))
-}
+
 export const getSizes = () => {
     return database.sizes.map(size => ({...size}))
-}
-
-export const getStyles = () => {
-    return database.styles.map(style => ({...style}))
-}
-export const getCustomOrders = () => {
-    return database.customOrders.map(customOrder => ({...customOrder}))
 }
 export const getOptions = () => {
     return database.options.map(option => ({...option}))
 }
-export const setMetal  = (id) => {
-    database.orderBuilder.metalId = id
-}
-export const setStyle = (id) => {
-    database.orderBuilder.styleId = id
-}
+
 
 export const setSize = (id) => {
     database.orderBuilder.sizeId = id

@@ -1,12 +1,13 @@
-import { getMetals, setMetal } from "./database.js"
+
+import { getData, setData } from "./dataAccess.js"
 import { Orders } from "./Orders.js"
 
-const metals = getMetals()
+const metals = getData("metals")
 
 document.addEventListener(
     "change", (event) => {
         if (event.target.name === "metal") {
-            setMetal(parseInt(event.target.value)) // this sets the state with the value of the target that was selected
+            setData(parseInt(event.target.value),"metal") // this sets the state with the value of the target that was selected
         }
     }
 )
