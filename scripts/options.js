@@ -1,12 +1,13 @@
-import { getOptions, setOption } from "./database.js"
 
-const options = getOptions()
+import { getData, setData } from "./dataAccess.js"
+
+const options = getData("options")
 
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "jewelry_option") {
-            setOption(parseInt(event.target.value)) //this sets the state with the target value of what was selected
+            setData(parseInt(event.target.value),"option") //this sets the state with the target value of what was selected
         }
     }
 )

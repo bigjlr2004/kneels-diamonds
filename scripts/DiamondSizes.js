@@ -1,12 +1,11 @@
-import { getSizes, setSize } from "./database.js"
-
-const sizes = getSizes()
+import { getData, setData } from "./dataAccess.js"
+const sizes = getData("sizes")
 
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "size") {
-            setSize(parseInt(event.target.value))
+            setData(parseInt(event.target.value),"size")
         }
     }
 )
