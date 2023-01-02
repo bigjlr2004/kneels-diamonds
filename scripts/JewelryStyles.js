@@ -18,7 +18,7 @@ export const JewelryStyles = () => {
     const listItemsArray = styles.map(style => {
 
         return `<li>
-        <input type="radio" name="style" value="${style.id}" /> ${style.style}
+        <input type="radio" name="style" value="${style.id}" id="style${style.id}" /> ${style.style}
     </li>`
 })
     
