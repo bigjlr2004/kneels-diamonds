@@ -19,7 +19,8 @@ export const JewelryOptions = () => {
     const listOptionsArray = options.map(option => {
 
         return `<li>
-        <input type="radio" name="jewelry_option" value="${option.id}" /> ${option.type}
+        <input type="radio" name="jewelry_option" value="${option.id}" id="option${option.id}"/> ${option.type} 
+        
     </li>`
 })
     

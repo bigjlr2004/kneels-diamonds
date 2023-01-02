@@ -4,7 +4,25 @@ export const getData = (data) => {
     return database[data].map(data => ({...data}))}
 
 export const setData  = (data,option) => {
-    database.orderBuilder[`${option}Id`] = data}
+    database.orderBuilder[`${option}Id`] = data
+    //regenerates the HTML for the user every time the state is changed.
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+    const checkData = {...database.orderBuilder}
+        if (checkData.metalId) {
+            document.getElementById(`metal${checkData.metalId}`).checked = true
+            
+        }
+        if (checkData.styleId) {
+            document.getElementById(`style${checkData.styleId}`).checked = true
+        }
+        if (checkData.optionId) {
+            document.getElementById(`option${checkData.optionId}`).checked = true
+        }
+        if (checkData.sizeId) {
+            document.getElementById(`size${checkData.sizeId}`).checked = true
+        }
+    
+}
 
     
     

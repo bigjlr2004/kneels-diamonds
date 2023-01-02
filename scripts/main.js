@@ -12,3 +12,8 @@ document.addEventListener("stateChanged", event => {
     console.log("State of data has changed. Regenerating HTML...")
     renderAllHTML()
 })
+
+document.addEventListener("setOption", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    document.getElementById("metal1").checked = true
+})
